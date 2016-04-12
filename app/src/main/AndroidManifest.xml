@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="pomis.app.backgroundprocesssample" >
-
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
     <application
         android:allowBackup="true"
@@ -23,14 +22,15 @@
             android:exported="true" >
         </service>
 
-        <receiver
-            android:name=".MyReceiver"
+        <receiveri
+            android:name=".BootReceiver"
             android:enabled="true"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
-                <action android:name="ANDROID.INTENT.ACTION.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
             </intent-filter>
-        </receiver>
+        </receiveri>
     </application>
 
 </manifest>
